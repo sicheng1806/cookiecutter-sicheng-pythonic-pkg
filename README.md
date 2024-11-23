@@ -50,11 +50,6 @@ my_project/
 └── tests
     ├── conftest.py
     ├── __init__.py
-    ├── __pycache__
-    │   ├── conftest.cpython-312-pytest-8.3.3.pyc
-    │   ├── __init__.cpython-312.pyc
-    │   ├── test_squarer.cpython-312-pytest-8.3.3.pyc
-    │   └── test_version.cpython-312-pytest-8.3.3.pyc
     ├── settings.yml
     └── test_version.py
 ```

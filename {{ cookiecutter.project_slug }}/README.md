@@ -12,7 +12,7 @@
 uv sync
 ```
 
-### 2.2 useage
+### 2.2 usage
 
 TODO
 
