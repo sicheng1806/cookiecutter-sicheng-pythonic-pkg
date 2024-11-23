@@ -15,7 +15,7 @@ def init_tmpdir():
 def test_cookiecutter():
     init_tmpdir()
     result = subprocess.run(
-        ["uv", "run", "cookiecutter", ".", "-o", tmpdir, "--no-input"]
+        ["python", "-m", "cookiecutter", ".", "-o", tmpdir, "--no-input"]
     )
     assert result.returncode == 0
 

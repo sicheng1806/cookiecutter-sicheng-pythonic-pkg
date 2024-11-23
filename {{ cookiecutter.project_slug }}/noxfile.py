@@ -3,7 +3,7 @@ import nox
 python_version = "{{ cookiecutter.python_version }}"
 
 nox.options.sessions = ["lint", "test"]
-nox.options.default_venv_backend = "uv"
+# nox.options.default_venv_backend = "uv"
 # nox.options.reuse_venv = True
 
 
