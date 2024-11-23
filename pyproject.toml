@@ -1,0 +1,34 @@
+[project]
+name = "uv-demo-pkg"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "sicheng1806", email = "sicheng1806@outlook.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.5.45",
+    "pytest>=8.3.3",
+]
+
+[project.scripts]
+uv-demo-pkg = "uv_demo_pkg:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+python_files = "tests.py test_*.py *_tests.py"
+
+[tool.ruff]
+# Set the maximum line length
+line-length = 120
