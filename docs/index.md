@@ -7,7 +7,7 @@
 A template for generating Python engineering projects using the [Cookiecutter](https://github.com/cookiecutter/cookiecutter) tool.
 
 - Documentation:
-- GitHub:
+- GitHub: https://github.com/sicheng1806/cookiecutter-sicheng-pythonic-pkg
 
 ## Features
 
@@ -24,12 +24,37 @@ A template for generating Python engineering projects using the [Cookiecutter](h
 1. Install [cookiecutter](https://github.com/cookiecutter/cookiecutter).
 2. Use the template:
 ```bash
-cookiecutter https://github.com/...
+cookiecutter https://github.com/sicheng1806/cookiecutter-sicheng-pythonic-pkg
 ```
 
 ## Project Structure
 
 ```text
+my_project/
+├── docs
+│   ├── conf.py
+│   ├── development.md
+│   ├── doc_requirements.txt
+│   ├── index.md
+│   ├── _static
+│   └── _templates
+├── LICENSE
+├── noxfile.py
+├── pyproject.toml
+├── README.md
+├── src
+│   └── my_project
+│       └── __init__.py
+└── tests
+    ├── conftest.py
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── conftest.cpython-312-pytest-8.3.3.pyc
+    │   ├── __init__.cpython-312.pyc
+    │   ├── test_squarer.cpython-312-pytest-8.3.3.pyc
+    │   └── test_version.cpython-312-pytest-8.3.3.pyc
+    ├── settings.yml
+    └── test_version.py
 ```
 
 ## Develop Guidlines
