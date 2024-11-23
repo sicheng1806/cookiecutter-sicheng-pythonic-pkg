@@ -1,6 +1,6 @@
 import nox
 
-python_version = "3.12"
+python_version = "{{ cookiecutter.python_version }}"
 
 nox.options.sessions = ["lint", "test"]
 nox.options.default_venv_backend = "uv"
@@ -9,8 +9,8 @@ nox.options.default_venv_backend = "uv"
 
 @nox.session(reuse_venv=True)
 def lint(session):
-    session.run("uvx", "ruff", "check", "tests", external=True)
-    session.run("uvx", "ruff", "format", "tests", external=True)
+    session.run("uvx", "ruff", "check", external=True)
+    session.run("uvx", "ruff", "format", external=True)
 
 
 @nox.session(python=python_version)
@@ -20,7 +20,7 @@ def test(session):
         session.install(*requirements)
     session.install(".")
     session.install("pytest")
-    session.run("pytest", "tests")
+    session.run("pytest")
 
 
 build_command = ["-b", "html", "docs", "docs/_build/html", "-v"]

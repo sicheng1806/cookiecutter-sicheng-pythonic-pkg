@@ -1,0 +1,21 @@
+{
+    "project_name": "My Project",
+    "project_slug": "{{ cookiecutter.project_name.lower()|trim()|replace(' ', '_')|replace('-', '_')|replace('.', '_') }}",
+    "project_description": "My Awesome Project",
+    "author_name": "sicheng1806",
+    "author_email": "sicheng1806@outlook.com",
+    "version":"0.1.0",
+    "python_version": [
+        "3.12",
+        "3.11",
+        "3.10",
+        "3.13"
+    ],
+    "project_type": [
+        "pkg"
+    ],
+    "ci_tools": [
+        "none",
+        "github"
+    ]
+}

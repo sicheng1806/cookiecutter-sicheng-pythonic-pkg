@@ -1,0 +1,36 @@
+[project]
+name = "{{ cookiecutter.project_slug }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.project_description }}"
+readme = "README.md"
+authors = [
+    { name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}" }
+]
+requires-python = ">={{ cookiecutter.python_version }}"
+dependencies = [
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.3",
+]
+doc = [
+    "linkify-it-py>=2.0.3",
+    "myst-parser>=4.0.0",
+    "pydata-sphinx-theme>=0.16.0",
+    "sphinx>=8.1.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+python_files = "tests.py test_*.py *_tests.py"
+
+[tool.ruff]
+# Set the maximum line length
+line-length = 120

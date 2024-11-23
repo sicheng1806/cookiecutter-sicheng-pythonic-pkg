@@ -1,8 +1,8 @@
 # -- Project information -----------------------------------------------------
 
-project = "uv-demo-pkg"
-copyright = "2024, sicheng1806"
-author = "sicheng1806"
+project = "{{ cookiecutter.project_name }}"
+copyright = "2024, {{ cookiecutter.author_name }}"
+author = "{{ cookiecutter.author_name }}"
 
 # -- Internationalization ----------------------------------------------------
 

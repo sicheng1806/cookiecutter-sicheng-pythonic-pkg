@@ -1,21 +1,39 @@
-# uv-demo-pkg
+# cookiecutter-sicheng-pythonic-pkg
 
-## 1. Overview
+![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/pyloong/cookiecutter-pythonic-project/main.yml?style=flat-square)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyloong/cookiecutter-pythonic-project?style=flat-square)
+![License](https://img.shields.io/github/license/pyloong/cookiecutter-pythonic-project?style=flat-square)
 
-Add your description here
+一个使用 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) 工具生成 Python 工程化项目的模板。
 
-## 2. Usage
+- 文档:
+- GitHub:
 
-### 2.1 init project
+## 特性
 
+- 使用[uv](https://github.com/astral-sh/uv)作为项目虚拟环境管理工具
+- 配置`GitHub Actions`
+- 使用[ruff](https://github.com/astral-sh/ruff)作为格式风格审查工具
+- 使用[pytest](https://github.com/pytest-dev/pytest)作为测试框架
+- 使用[sphinx](https://github.com/sphinx-doc/sphinx)作为文档生成工具
+- 使用[pre-commit](https://github.com/pre-commit/pre-commit)配置`git commit`执行前的自动化审查脚本
+- 使用[nox](https://github.com/wntrblm/nox)作为自动化工具，并配置代码风格审查、测试、文档构建脚本
+
+工具的具体使用方法可以查看模板内的[development.md](docs/development.md) 文档。
+
+## 如何使用
+
+1. 安装[cookiecutter](https://github.com/cookiecutter/cookiecutter)
+2. 使用模板:
 ```bash
-uv run
+cookiecutter https://github.com/...
 ```
 
-### 2.2 useage
+## 项目结构
 
-TODO
+```text
+```
 
-## 3. Develop
+## 使用项目
 
-You may need to read the [develop document](./docs/development.md) to use SRC Layout in your IDE.
+具体查看[development.md](docs/development.md)或者查看项目内`docs/development.md`文档。
