@@ -1,6 +1,6 @@
 # -- Project information -----------------------------------------------------
 
-project = "uv-demo-pkg"
+project = "sicheng-py-template"
 copyright = "2024, sicheng1806"
 author = "sicheng1806"
 

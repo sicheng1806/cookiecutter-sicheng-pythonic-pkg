@@ -6,7 +6,7 @@
 
 A template for generating Python engineering projects using the [Cookiecutter](https://github.com/cookiecutter/cookiecutter) tool.
 
-- Documentation:
+- Documentation: https://cookiecutter-sicheng-pythonic-pkg.readthedocs.io/en/latest/
 - GitHub: https://github.com/sicheng1806/cookiecutter-sicheng-pythonic-pkg
 
 ## Features
@@ -57,7 +57,7 @@ my_project/
     └── test_version.py
 ```
 
-## Develop Guidlines
+## Contents
 
 ```{toctree}
 ./development.md
