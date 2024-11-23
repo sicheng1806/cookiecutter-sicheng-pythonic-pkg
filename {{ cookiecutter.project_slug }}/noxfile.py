@@ -9,8 +9,9 @@ nox.options.sessions = ["lint", "test"]
 
 @nox.session(reuse_venv=True)
 def lint(session):
-    session.run("uvx", "ruff", "check", external=True)
-    session.run("uvx", "ruff", "format", external=True)
+    session.install("ruff")
+    session.run("ruff", "check", external=True)
+    session.run("ruff", "format", external=True)
 
 
 @nox.session(python=python_version)
