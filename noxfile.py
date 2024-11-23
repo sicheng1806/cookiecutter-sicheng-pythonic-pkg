@@ -21,3 +21,23 @@ def test(session):
     session.install(".")
     session.install("pytest")
     session.run("pytest")
+
+
+build_command = ["-b", "html", "docs", "docs/_build/html", "-v"]
+
+
+@nox.session(python=python_version, reuse_venv=True)
+def docs(session):
+    session.install("-r", "docs/doc_requirements.txt")
+    session.run("sphinx-build", *build_command)
+
+
+@nox.session(name="docs-live", python=python_version, reuse_venv=True)
+def docs_live(session):
+    session.install("-r", "docs/doc_requirements.txt")
+    session.install("sphinx-autobuild")
+
+    AUTOBUILD_IGNORE = ["docs/_build"]
+    cmd = ["--ignore"] + [f"*/{folder}/*" for folder in AUTOBUILD_IGNORE]
+    cmd.extend(build_command)
+    session.run("sphinx-autobuild", *cmd)
