@@ -14,7 +14,7 @@ def lint(session):
     session.run("ruff", "format", "tests", external=True)
 
 
-@nox.session(python=python_version)
+@nox.session(python=python_version, reuse_venv=True)
 def test(session):
     requirements = nox.project.load_toml("pyproject.toml")["project"]["dependencies"]
     if requirements:
@@ -22,6 +22,16 @@ def test(session):
     session.install(".")
     session.install("pytest")
     session.run("pytest", "tests")
+
+
+@nox.session(name="test-cov", python=python_version, reuse_venv=True)
+def test_cov(session):
+    requirements = nox.project.load_toml("pyproject.toml")["project"]["dependencies"]
+    if requirements:
+        session.install(*requirements)
+    session.install(".")
+    session.install("pytest", "pytest-cov")
+    session.run("pytest", "--cov", "--cov-report=xml")
 
 
 build_command = ["-b", "html", "docs", "docs/_build/html", "-v"]
