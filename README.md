@@ -1,9 +1,5 @@
 # cookiecutter-sicheng-pythonic-pkg
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/pyloong/cookiecutter-pythonic-project/main.yml?style=flat-square)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyloong/cookiecutter-pythonic-project?style=flat-square)
-![License](https://img.shields.io/github/license/pyloong/cookiecutter-pythonic-project?style=flat-square)
-
 一个使用 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) 工具生成 Python 工程化项目的模板。
 
 - 文档: https://cookiecutter-sicheng-pythonic-pkg.readthedocs.io/en/latest/
