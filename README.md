@@ -18,6 +18,7 @@
 - 使用[sphinx](https://github.com/sphinx-doc/sphinx)作为文档生成工具
 - 使用[pre-commit](https://github.com/pre-commit/pre-commit)配置`git commit`执行前的自动化审查脚本
 - 使用[nox](https://github.com/wntrblm/nox)作为自动化工具，并配置代码风格审查、测试、文档构建脚本
+- 使用[typos](https://github.com/crate-ci/typos)作为源代码拼写错误检查工具
 
 工具的具体使用方法可以查看模板内的[development.md](docs/development.md) 文档。
 

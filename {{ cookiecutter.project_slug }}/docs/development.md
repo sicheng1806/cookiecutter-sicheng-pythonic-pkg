@@ -14,6 +14,7 @@ In addition to that, you also need to use `uv tool install` to install some auxi
 - [Ruff](https://github.com/astral-sh/ruff?tab=readme-ov-file) An extremely fast Python linter and code formatter, written in Rust.
 - [pre-commit](https://github.com/pre-commit/pre-commit) A framework for managing and maintaining multi-language pre-commit hooks.
 - [![Nox](https://img.shields.io/badge/%F0%9F%A6%8A-Nox-D85E00.svg)](https://github.com/wntrblm/nox) Flexible test automation with Python.
+- [typos](https://github.com/crate-ci/typos) Finds and corrects spelling mistakes among source code.
 
 ## Init project environment
 
@@ -34,6 +35,11 @@ Note that `uvx` is an alias for `uv tool run`.
 - `uvx ruff format` run the Ruff formatter
 
 or do it by nox: `nox -s lint`.
+
+### Check spelling mistakes
+
+- `uvx typos` to find spelling mistakes
+- `uvx typos -w` to fix spelling mistakes
 
 ### Check test
 
