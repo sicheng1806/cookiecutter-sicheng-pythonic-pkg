@@ -1,9 +1,5 @@
 # cookiecutter-sicheng-pythonic-pkg
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/pyloong/cookiecutter-pythonic-project/main.yml?style=flat-square)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyloong/cookiecutter-pythonic-project?style=flat-square)
-![License](https://img.shields.io/github/license/pyloong/cookiecutter-pythonic-project?style=flat-square)
-
 A template for generating Python engineering projects using the [Cookiecutter](https://github.com/cookiecutter/cookiecutter) tool.
 
 - Documentation: https://cookiecutter-sicheng-pythonic-pkg.readthedocs.io/en/latest/
