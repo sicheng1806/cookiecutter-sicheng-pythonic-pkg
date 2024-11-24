@@ -21,4 +21,4 @@ wheels/
 # Test
 .tmp/
 coverage.xml
-.coverage
+/.coverage

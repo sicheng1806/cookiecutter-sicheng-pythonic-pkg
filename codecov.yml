@@ -1,5 +1,0 @@
-comment: false
-fail_ci_if_error: false
-ignore:
-  - "noxfile.*"
-  - "{{ cookiecutter.project_slug }}"
