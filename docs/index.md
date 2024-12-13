@@ -14,6 +14,9 @@ A template for generating Python engineering projects using the [Cookiecutter](h
 - Uses [sphinx](https://github.com/sphinx-doc/sphinx) as the documentation generation tool.
 - Uses [pre-commit](https://github.com/pre-commit/pre-commit) to configure automated review scripts before `git commit`.
 - Uses [nox](https://github.com/wntrblm/nox) as the automation tool, and configures scripts for code style review, testing, and documentation building.
+- Use [typos](https://github.com/crate-ci/typos) as a source code spell checker tool.
+- Use [codecov]
+
 
 ## How to Use
 

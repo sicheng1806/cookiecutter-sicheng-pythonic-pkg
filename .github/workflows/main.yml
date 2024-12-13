@@ -1,23 +1,16 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# This workflow will install Python dependencies, run tests and lint with a single version of Python using nox
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
 name: main
+run-name: Lint and Test to code
 
 on:
   push:
     branches:
       - main
-      - develop
-    tags:
-      - "*"
-
-  pull_request:
-    branches:
-      - main
-      - develop
 
 jobs:
-  Test:
+  lint_and_test:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -28,32 +21,16 @@ jobs:
 
 
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Set up Python ${{ matrix.python }} on ${{ matrix.os }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python }}
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install nox
-      - name: Run tests
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Set up nox
+        uses: wntrblm/nox@main
+      - name: Run ruff for code Linting
+        run: nox -s lint
+      - name: Run pytest for test
         run: |
           nox -s test-cov
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-
-  Linting:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.12"
-      - run: pip install nox
-      - run: |
-          nox -s lint
