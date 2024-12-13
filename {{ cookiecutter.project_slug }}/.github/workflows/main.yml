@@ -1,8 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python using nox
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: main
-run-name: Lint and Test to code
+name: lint and test
 
 on:
   push:
@@ -11,7 +10,7 @@ on:
 
 jobs:
   lint_and_test:
-    runs-on: ${{ '{{' }} matrix.os  {{ '}}' }}
+    runs-on: ${{ '{{' }} matrix.os {{ '}}' }}
 
     strategy:
       fail-fast: false
@@ -21,15 +20,27 @@ jobs:
 
 
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up nox
-        uses: wntrblm/nox@main
-      - name: Run ruff for code Linting
-        run: nox -s lint
-      - name: Run pytest for test
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ '{{' }} matrix.python {{ '}}' }}
+      - name: Install the project
+        run: uv sync --all-extras --dev
+      - name: Run ruff
         run: |
-          nox -s test-cov
+          uv add ruff --dev
+          uv run ruff format tests
+          uv run ruff check tests
+      - name: Run Test and code cov
+        run: |
+          uv add pytest-cov --dev
+          uv run pytest --cov --cov-report=xml
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4
         with:
