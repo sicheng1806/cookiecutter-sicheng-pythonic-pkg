@@ -22,6 +22,17 @@ doc = [
     "sphinx>=8.1.3",
 ]
 
+##############################
+##          Tools           ##
+##############################
+
+[tool.uv]
+default-groups = ["dev","doc"]
+
+[[tool.uv.index]]
+name = "tuna-mirror"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+
 [tool.pytest.ini_options]
 testpaths = [
     "tests",
